@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+
+<body class="container-fluid">
+	<nav class="navbar navbar-toggleable-md navbar-light fixed-top nav-inverse nav-bg border-bottom nav-border-color" role="navigation">
+		<div class="navbar-header ">
+
+			<a class="navbar-brand text-white" href="#">Michael Kurowski 		<i class="fa fa-bars navbar-toggle hidden-lg-up" data-toggle="collapse" data-target="#scrollers"  aria-expanded="false" aria-controls="scrollers"></i></a>
+
+
+		</div>
+
+		<div class="collapse navbar-collapse " id="scrollers">
+			<ul class="navbar navbar-nav "  >
+				<li class="nav-item active">
+					<a class="nav-link text-white" href="#" id="nav-about" onClick='$("html, body").animate({scrollTop: $("#about").offset().top - $(window).height()/3}, 1000);'>About <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item text-white">
+					<a class="nav-link text-white" href="#" id="nav-portfolio" onClick='$("html, body").animate({scrollTop: $("#gallery").offset().top - $(window).height()/3}, 1000);'>Portfolio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-white" href="#" id="nav-links" onClick='$("html, body").animate({scrollTop: $("#links").offset().top - $(window).height()/3}, 1000);' >Links</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-white" href="#" id="nav-contact" onClick='$("html, body").animate({scrollTop: $("#contact-header").offset().top - $(window).height()/3}, 1000);' >Contact</a>
+				</li>
+			</ul>
+
+			</div>
+			<div class="pull-right">
+				<div class="row">
+					<div class="col-xs-1"><a href="#" onclick="setLanguage('eng')"><span class="glyphicon glyphicon-user"></span><img class= "flag-icon" src="http://i66.tinypic.com/2n739k7.png"></a></div>
+					<div class="col-xs-1"><a href="#" onclick="setLanguage('pl')"><span class="glyphicon glyphicon-user"></span><img class= "flag-icon"  src="http://i68.tinypic.com/11glikj.png"></a></div>		<div class="col-xs-1"><a href="#" onclick="setLanguage('ie')"><span class="glyphicon glyphicon-user"></span><img class= "flag-icon"  src="http://i67.tinypic.com/1671cgi.png"></a></div>		
+				</div>
+		</div>
+
+	</nav>
+	<canvas id="mainPage" class=" "></canvas>
+	<div class="row bgd-primary" id="about">
+		<div class="col-md-2"></div>
+		<div class="row col-md-7 justify-content-center pt-5 mb-5">
+			<div class="col-md-3 align-self-center">
+				<img src="https://avatars3.githubusercontent.com/u/2772942?v=3&u=32345dcfaeb87a517e5f1820637d9cb09e363c99&s=400"
+					 class="rounded-circle img-thumbnail"></img>
+			</div>
+			<div class="col-md-9">
+				<p id="aboutText">
+					Hey there,<br>
+					I'm Michael, a web developer driven with passion to JavaScript and graphics. <br>
+					
+					Enthusiast of teamwork and efficient workflow.
+					Welcome to my personal page.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class = "row bgd-secondary pagination-centered" id = "gallery"><!-- Automatically generated content --></div>
+
+	<div class = "row bgd-primary p-5 pagination-centered" id = "links">
+		<div class = "col-md-12"><h1 class = "text-black mb-5" id = "links-header">Links</h1></div>
+		<div class = "col-lg-1 center-block mb-3">
+			<a href="https://www.linkedin.com/in/michael-kurowski-b3557b112/" target="_blank">
+				<img class = "center-block links-icons block" src = "http://i68.tinypic.com/34o3r42.png"></img>
+				<div class = "text-center "><span>LinkedIn</span></div>
+			</a>
+		</div>
+		<div class = "col-lg-1 center-block mb-3">
+			<a href="https://github.com/michaelKurowski" target="_blank">
+				<img class = "center-block links-icons block" src = "http://i65.tinypic.com/2wftyzn.png"></img>
+				<div class = "text-center"><span>GitHub</span></div>
+			</a>
+		</div>
+		<div class = "col-lg-1 center-block mb-3">
+			<a href="https://codepen.io/michaelKurowski/" target="_blank">
+				<img class = "center-block links-icons block" src = "http://i66.tinypic.com/2uxz67l.png"></img>
+				<div class = "text-center"><span>CodePen</span></div>
+			</a>
+		</div>
+		<div class = "col-lg-1 center-block mb-3">
+			<a href="http://kesepton.deviantart.com/gallery/" target="_blank">
+				<img class = "center-block links-icons block" src="http://i65.tinypic.com/w0kumu.png"></img>
+				<div class = "text-center"><span>DeviantArt</span></div>
+			</a>
+		</div>
+	</div>
+	<div class = "row bgd-secondary p-5">
+		<div class = "col-md-12"><h1 class = "m-5" id="contact-header">Contact</h1></div>
+		<div class = "col-md-7 center-block text-white">
+			<span id="contact-email">email</span> <span>: michael.kurowski@tlen.pl</span><br> 
+		</div>
+	</div>
+	<div class = "row bgd-primary p-5">
+		<div class = "col-md-12 center-block text-center">2017 Michael Kurowski</div>
+	</div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
