@@ -246,7 +246,7 @@ let portfolioGallery = [
 ]
 
 function setLanguage (languageCode) {
-	languageSet = languageCode
+	languageSet = languageCode || languageSet
 	languageMap.forEach( (value, key) => {
 		let text = dictionary.get(languageCode).get(key)
 		$('#' + value).html(text)
@@ -343,6 +343,7 @@ Promise.all(imgLoading)
 			$(img).addClass('img-thumbnail')
 			$('#gallery-' + element.title).append(imgContainer)
 		})
+		setLanguage(false)
 	})
 })
 
@@ -534,3 +535,4 @@ function rand(min,max,round){
 			return Math.random()*max+min;
 	}
 }
+
