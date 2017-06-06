@@ -245,7 +245,7 @@ let portfolioGallery = [
 	},
 ]
 
-function setLanguage (languageCode) {
+function setLanguage (languageCode = 'eng') {
 	languageSet = languageCode || languageSet
 	languageMap.forEach( (value, key) => {
 		let text = dictionary.get(languageCode).get(key)
@@ -343,7 +343,8 @@ Promise.all(imgLoading)
 			$(img).addClass('img-thumbnail')
 			$('#gallery-' + element.title).append(imgContainer)
 		})
-		setLanguage(false)
+		//setTimeout(()=>setLanguage('eng'), 1000)
+		setLanguage('eng')
 	})
 })
 
@@ -352,6 +353,9 @@ void function setListeners() {
 		$('.slideshow-pic').css({'transform': `rotateX(${Math.abs(e.clientY/20)}deg)`} )
 	}
 }()
+
+let cnv = document.getElementById("mainPage");
+let ctx = cnv.getContext("2d");
 
 let viewportWidth = 0
 let grdColors = ['rgba(0,0,0,0.3)', "rgba(0,0,0,0)"];
@@ -364,16 +368,15 @@ let backgroundColor = '#311717'
 let dotsAmount = Math.round($(window).width()/25);
 
 
-let bigDotsAmount = Math.round($(window).width()/25);;
+let bigDotsAmount = Math.round($(window).width()/25);
 let speedLimit = 0.6;
-let lineLength = 200;
-let lineWidthMultiplier = 1
+let lineLength = 200
+let lineWidthMultiplier = 0.005 * cnv.width
 
 
 
 let lnLngthSqrd = lineLength*lineLength;
-let cnv = document.getElementById("mainPage");
-let ctx = cnv.getContext("2d");
+
 
 let dotsList = [];
 let bigDotsList = [];
@@ -439,7 +442,7 @@ function frame (){
 	ctx.fillStyle = grd2;
 	ctx.fillRect(0, 0, cnv.width, cnv.height);
 	ctx.textAlign = 'center'
-	let fontSize = Math.sqrt(viewportWidth*2)/2.4 + (viewportWidth * 2) / 2000
+	let fontSize = Math.sqrt(viewportWidth*6)/2.4 + (viewportWidth * 2) / 2000 - viewportWidth / 100
 	ctx.font = fontSize + 'px Georgia';
 	ctx.fillStyle = fontColor;
 	ctx.fillText(dictionary.get(languageSet).get('$motto'), cnv.width/2, cnv.height/2);
