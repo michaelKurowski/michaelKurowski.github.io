@@ -538,4 +538,3 @@ function rand(min,max,round){
 			return Math.random()*max+min;
 	}
 }
-
